@@ -57,7 +57,7 @@ export default function Ecosystem({ t }: EcosystemProps) {
   const activePillarData = t.pillars[activePillar];
 
   return (
-    <section id="ecosystem" className="relative py-24 sm:py-32 bg-offwhite">
+    <section id="ecosystem" className="relative py-24 sm:py-32 bg-offwhite dark:bg-chumbo transition-colors duration-300">
       {/* Background visual connections */}
       <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-royal-blue/10 via-transparent to-royal-blue/10 -translate-x-1/2 pointer-events-none" />
 
@@ -65,13 +65,13 @@ export default function Ecosystem({ t }: EcosystemProps) {
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="font-space text-xs font-bold tracking-widest text-royal-blue uppercase block mb-4">
+          <span className="font-space text-xs font-bold tracking-widest text-royal-blue dark:text-royal-blue-light uppercase block mb-4">
             {t.tag}
           </span>
-          <h2 className="font-space font-bold text-3xl sm:text-4xl lg:text-5xl text-chumbo tracking-tight mb-6">
+          <h2 className="font-space font-bold text-3xl sm:text-4xl lg:text-5xl text-chumbo dark:text-offwhite tracking-tight mb-6">
             {t.title}
           </h2>
-          <p className="font-sans text-lg text-chumbo-light/85">
+          <p className="font-sans text-lg text-chumbo-light/85 dark:text-offwhite-darker/85">
             {t.sub}
           </p>
         </div>
@@ -90,13 +90,13 @@ export default function Ecosystem({ t }: EcosystemProps) {
                   onClick={() => setActivePillar(key)}
                   className={`cursor-pointer text-left p-6 rounded-2xl glass-card transition-all duration-300 relative overflow-hidden ${
                     isActive
-                      ? "border-royal-blue bg-white shadow-md shadow-royal-blue/5 scale-[1.01]"
-                      : "border-transparent bg-white/40 hover:bg-white/70 hover:border-chumbo/10"
+                      ? "border-royal-blue dark:border-royal-blue-light bg-white dark:bg-chumbo-dark shadow-md shadow-royal-blue/5 dark:shadow-royal-blue/10 scale-[1.01]"
+                      : "border-transparent bg-white/40 dark:bg-chumbo-dark/30 hover:bg-white/70 dark:hover:bg-chumbo-dark/60 hover:border-chumbo/10 dark:hover:border-white/10"
                   }`}
                 >
                   {/* Decorative connection bar on left for active state */}
                   <div
-                    className={`absolute left-0 top-0 bottom-0 w-1.5 bg-royal-blue transition-transform duration-300 ${
+                    className={`absolute left-0 top-0 bottom-0 w-1.5 bg-royal-blue dark:bg-royal-blue-light transition-transform duration-300 ${
                       isActive ? "scale-y-100" : "scale-y-0"
                     }`}
                   />
@@ -105,17 +105,17 @@ export default function Ecosystem({ t }: EcosystemProps) {
                     <div
                       className={`p-3.5 rounded-xl transition-colors duration-300 ${
                         isActive
-                          ? "bg-royal-blue text-white"
-                          : "bg-chumbo/5 text-chumbo"
+                          ? "bg-royal-blue dark:bg-royal-blue-light text-white"
+                          : "bg-chumbo/5 dark:bg-white/5 text-chumbo dark:text-offwhite"
                       }`}
                     >
                       {icons[key]}
                     </div>
                     <div>
-                      <h3 className="font-space font-bold text-lg sm:text-xl text-chumbo">
+                      <h3 className="font-space font-bold text-lg sm:text-xl text-chumbo dark:text-offwhite">
                         {pillar.title}
                       </h3>
-                      <p className="font-space text-xs font-semibold text-royal-blue uppercase tracking-wider mt-1.5">
+                      <p className="font-space text-xs font-semibold text-royal-blue dark:text-royal-blue-light uppercase tracking-wider mt-1.5">
                         {pillar.subtitle}
                       </p>
                     </div>
@@ -127,33 +127,33 @@ export default function Ecosystem({ t }: EcosystemProps) {
 
           {/* Active Pillar Details Dashboard (On Right) */}
           <div className="lg:col-span-6 flex">
-            <div className="w-full p-8 rounded-3xl bg-white border border-chumbo/5 shadow-xl shadow-chumbo/3 flex flex-col justify-between animate-fade-in relative overflow-hidden">
+            <div className="w-full p-8 rounded-3xl bg-white dark:bg-chumbo-dark border border-chumbo/5 dark:border-white/10 shadow-xl shadow-chumbo/3 dark:shadow-chumbo-dark/40 flex flex-col justify-between animate-fade-in relative overflow-hidden">
               {/* Visual Connection Overlay representing TRIUM logo links */}
-              <div className="absolute right-[-40px] top-[-40px] w-64 h-64 bg-royal-blue/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute right-[-40px] top-[-40px] w-64 h-64 bg-royal-blue/5 dark:bg-royal-blue-light/5 rounded-full blur-3xl pointer-events-none" />
               
               <div>
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
-                  <span className="w-1.5 h-6 bg-royal-blue rounded-full" />
-                  <h4 className="font-space font-bold text-2xl text-chumbo">
+                  <span className="w-1.5 h-6 bg-royal-blue dark:bg-royal-blue-light rounded-full" />
+                  <h4 className="font-space font-bold text-2xl text-chumbo dark:text-offwhite">
                     {activePillarData.title}
                   </h4>
                 </div>
 
                 {/* Main Description */}
-                <p className="font-sans text-base sm:text-lg text-chumbo-light leading-relaxed mb-8">
+                <p className="font-sans text-base sm:text-lg text-chumbo-light dark:text-offwhite-darker leading-relaxed mb-8">
                   {activePillarData.desc}
                 </p>
 
                 {/* Features List */}
-                <h5 className="font-space font-bold text-xs text-chumbo-muted uppercase tracking-widest mb-4">
+                <h5 className="font-space font-bold text-xs text-chumbo-muted dark:text-chumbo-muted uppercase tracking-widest mb-4">
                   {t.included}
                 </h5>
                 <ul className="flex flex-col gap-3">
                   {activePillarData.details.map((detail, index) => (
-                    <li key={index} className="flex items-start gap-3 text-sm font-sans font-medium text-chumbo-light/90">
+                    <li key={index} className="flex items-start gap-3 text-sm font-sans font-medium text-chumbo-light/90 dark:text-offwhite-darker/90">
                       <svg
-                        className="w-5 h-5 text-royal-blue shrink-0 mt-0.5"
+                        className="w-5 h-5 text-royal-blue dark:text-royal-blue-light shrink-0 mt-0.5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -172,13 +172,13 @@ export default function Ecosystem({ t }: EcosystemProps) {
               </div>
 
               {/* Dynamic CTA trigger link */}
-              <div className="mt-10 pt-6 border-t border-chumbo/5 flex items-center justify-between">
-                <span className="text-xs font-semibold text-chumbo-muted uppercase tracking-wider animate-fade-in" key={activePillar}>
+              <div className="mt-10 pt-6 border-t border-chumbo/5 dark:border-white/10 flex items-center justify-between">
+                <span className="text-xs font-semibold text-chumbo-muted dark:text-chumbo-muted uppercase tracking-wider animate-fade-in" key={activePillar}>
                   {activePillarData.nextStep}
                 </span>
                 <a
                   href="#contact"
-                  className="inline-flex items-center text-sm font-bold text-royal-blue hover:text-royal-blue-hover transition-colors group font-space"
+                  className="inline-flex items-center text-sm font-bold text-royal-blue dark:text-royal-blue-light hover:text-royal-blue-hover dark:hover:text-royal-blue transition-colors group font-space"
                 >
                   {t.cta}
                   <svg

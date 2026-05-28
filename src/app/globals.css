@@ -97,3 +97,38 @@ input[type="radio"]:checked + label {
   border-color: #0A3BC2;
   background-color: rgba(10, 59, 194, 0.04);
 }
+
+/* Premium Dark Mode overrides */
+.dark {
+  --background: #121417;
+  --foreground: #F9F9FB;
+  scrollbar-color: #3B82F6 #1E2229;
+}
+
+.dark .glass-card {
+  background: rgba(30, 34, 41, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .glass-card-hover:hover {
+  background: rgba(42, 48, 59, 0.85);
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.15);
+}
+
+.dark .text-gradient-blue {
+  background: linear-gradient(135deg, #F9F9FB 30%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient-chumbo {
+  background: linear-gradient(135deg, #F9F9FB 0%, #E5E5EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark input[type="radio"]:checked + label {
+  border-color: #3B82F6;
+  background-color: rgba(59, 130, 246, 0.06);
+}

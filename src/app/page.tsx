@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Manifesto from "@/components/Manifesto";
@@ -13,6 +13,15 @@ export type Language = "pt" | "en" | "es";
 
 export default function Home() {
   const [lang, setLang] = useState<Language>("pt");
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   const dict = {
     pt: {
@@ -463,7 +472,13 @@ export default function Home() {
 
   return (
     <>
-      <Navbar lang={lang} setLang={setLang} t={dict[lang].menu} />
+      <Navbar
+        lang={lang}
+        setLang={setLang}
+        t={dict[lang].menu}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
       <main className="flex flex-col flex-1 w-full overflow-hidden">
         <Hero t={dict[lang].hero} />
         <Manifesto t={dict[lang].manifesto} />
