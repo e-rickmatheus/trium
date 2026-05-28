@@ -15,11 +15,26 @@ export default function Home() {
   const [lang, setLang] = useState<Language>("pt");
   const [darkMode, setDarkMode] = useState(false);
 
+  // Load saved theme on mount (client-only)
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else if (savedTheme === "light") {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  // Sync theme changes to DOM and localStorage
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
 
