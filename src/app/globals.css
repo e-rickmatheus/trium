@@ -100,37 +100,175 @@ input[type="radio"]:checked + label {
   background-color: rgba(10, 59, 194, 0.04);
 }
 
-/* Premium Dark Mode overrides */
+/* Premium Dark Mode Overrides */
 .dark {
   --background: #121417;
   --foreground: #F9F9FB;
   scrollbar-color: #3B82F6 #1E2229;
 }
 
-.dark .glass-card {
-  background: rgba(30, 34, 41, 0.6);
-  border-color: rgba(255, 255, 255, 0.08);
+.dark body {
+  background-color: #121417 !important;
+  color: #F9F9FB !important;
 }
 
+/* Sections backgrounds override */
+.dark section#hero {
+  background-color: #121417 !important;
+  background-image: none !important; /* Overrides light gradient */
+}
+
+.dark section#manifesto,
+.dark section#methodology,
+.dark section#contact {
+  background-color: #121417 !important;
+}
+
+.dark section#ecosystem {
+  background-color: #1E2229 !important;
+}
+
+/* Cards & Containers backgrounds override */
+.dark .bg-white,
+.dark .bg-offwhite,
+.dark .bg-offwhite-pure,
+.dark .glass-card {
+  background-color: #1E2229 !important;
+  background: #1E2229 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Inactive cards in Ecosystem */
+.dark #ecosystem .bg-white\/40 {
+  background-color: rgba(18, 20, 23, 0.3) !important;
+  background: rgba(18, 20, 23, 0.3) !important;
+}
+
+.dark #ecosystem .border-transparent {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Text and Titles */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5,
+.dark .text-chumbo, .dark .text-chumbo-light {
+  color: #F9F9FB !important;
+}
+
+.dark p, .dark li, .dark label, 
+.dark .text-chumbo\/70, .dark .text-chumbo\/75, 
+.dark .text-chumbo-light\/80, .dark .text-chumbo-light\/85, 
+.dark .text-chumbo-light\/90, .dark .text-chumbo-light\/95 {
+  color: #E5E5EB !important;
+}
+
+.dark .text-chumbo-muted {
+  color: #9CA3AF !important;
+}
+
+.dark .text-royal-blue {
+  color: #3B82F6 !important; /* brighter blue in dark mode */
+}
+
+/* Badges and tags */
+.dark .bg-white.border-chumbo\/5 {
+  background-color: #1E2229 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dividers & Icons background */
+.dark .border-chumbo\/5,
+.dark .border-chumbo\/10,
+.dark .border-white\/5,
+.dark .bg-chumbo\/10,
+.dark .bg-chumbo\/5 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Inputs and Forms */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #121417 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #F9F9FB !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  background-color: #1E2229 !important;
+  border-color: #3B82F6 !important;
+}
+
+/* Custom form checked states in dark mode */
+.dark .border-royal-blue {
+  border-color: #3B82F6 !important;
+}
+
+.dark .bg-royal-blue\/5 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Buttons overrides */
+.dark .bg-chumbo {
+  background-color: #F9F9FB !important;
+  color: #121417 !important;
+}
+
+.dark .bg-chumbo:hover {
+  background-color: #3B82F6 !important;
+  color: #FFFFFF !important;
+}
+
+.dark .bg-white.text-chumbo {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #F9F9FB !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .bg-white.text-chumbo:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Navbar specific override */
+.dark nav {
+  background-color: rgba(18, 20, 23, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Invert Logo in dark mode */
+.dark nav img {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Methodology 3D Flipping Cards active state */
+.dark .bg-chumbo.border-white\/5 {
+  background-color: #121417 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Custom cards glass mode */
 .dark .glass-card-hover:hover {
-  background: rgba(42, 48, 59, 0.85);
-  border-color: rgba(59, 130, 246, 0.25);
-  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.15);
+  background: rgba(42, 48, 59, 0.85) !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
+  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.15) !important;
 }
 
 .dark .text-gradient-blue {
-  background: linear-gradient(135deg, #F9F9FB 30%, #3B82F6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #F9F9FB 30%, #3B82F6 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .dark .text-gradient-chumbo {
-  background: linear-gradient(135deg, #F9F9FB 0%, #E5E5EB 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #F9F9FB 0%, #E5E5EB 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .dark input[type="radio"]:checked + label {
-  border-color: #3B82F6;
-  background-color: rgba(59, 130, 246, 0.06);
+  border-color: #3B82F6 !important;
+  background-color: rgba(59, 130, 246, 0.06) !important;
 }
