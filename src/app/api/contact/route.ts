@@ -104,7 +104,7 @@ export async function POST(request: Request) {
     }
 
     // 3. Integration C: Send to Google Sheets Webhook (if URL configured)
-    const sheetsWebhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    const sheetsWebhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycby4RtcjTaBo6dECs7zXXXyrU8KWq61lq1fAhW6KAvw1lC17HmaLUI__IhNpYw4R9Xld/exec";
     if (sheetsWebhookUrl) {
       try {
         await fetch(sheetsWebhookUrl, {
