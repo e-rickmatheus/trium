@@ -134,7 +134,18 @@ export default function ContactForm({ t }: ContactFormProps) {
                 </p>
                 <div className="inline-block p-4 rounded-xl bg-offwhite dark:bg-chumbo-dark border border-chumbo/5 dark:border-white/10 text-sm font-sans font-medium text-chumbo-light dark:text-offwhite-darker max-w-lg">
                   <p className="font-bold text-chumbo dark:text-offwhite mb-1">{t.successNext}</p>
-                  {t.successNextDesc.replace("da sua empresa", formData.website || "da sua empresa")}
+                  {t.successNextDesc
+                    .replace("da sua empresa", formData.website || "da sua empresa")
+                    .split("**")
+                    .map((text, idx) => 
+                      idx % 2 === 1 ? (
+                        <strong key={idx} className="font-bold text-chumbo dark:text-offwhite">
+                          {text}
+                        </strong>
+                      ) : (
+                        text
+                      )
+                    )}
                 </div>
               </div>
             ) : submitting ? (
