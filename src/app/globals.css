@@ -178,10 +178,12 @@ input[type="radio"]:checked + label {
 /* Dividers & Icons background */
 .dark .border-chumbo\/5,
 .dark .border-chumbo\/10,
-.dark .border-white\/5,
+.dark .border-white\/5 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
 .dark .bg-chumbo\/10,
 .dark .bg-chumbo\/5 {
-  border-color: rgba(255, 255, 255, 0.08) !important;
   background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
@@ -234,7 +236,7 @@ input[type="radio"]:checked + label {
 
 /* Navbar specific override */
 .dark nav {
-  background-color: rgba(18, 20, 23, 0.95) !important;
+  background-color: #121417 !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
