@@ -43,7 +43,13 @@ export default function Navbar({ lang, setLang, t, darkMode, setDarkMode }: Navb
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50 transition-all duration-300 rounded-2xl bg-white dark:bg-chumbo-dark border border-chumbo/5 dark:border-white/10 text-chumbo dark:text-offwhite ${
+      style={{
+        backgroundColor: darkMode ? "#121417" : "#ffffff",
+        opacity: 1,
+        backdropFilter: "none",
+        WebkitBackdropFilter: "none"
+      }}
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50 transition-all duration-300 rounded-2xl border border-chumbo/5 dark:border-white/10 text-chumbo dark:text-offwhite ${
         scrolled
           ? "py-2.5 shadow-lg shadow-chumbo/5 dark:shadow-chumbo-dark/30"
           : "py-4 shadow-sm"

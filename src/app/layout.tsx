@@ -58,7 +58,7 @@ export default function RootLayout({
         
         {/* JivoChat Widget Script */}
         <Script
-          src="https://code.jivosite.com/widget/kiWgm7MnHx"
+          src="https://code.jivosite.com/widget/Mk4Ru0EDtx"
           strategy="afterInteractive"
         />
       </body>
